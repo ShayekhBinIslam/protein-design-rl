@@ -1,5 +1,6 @@
 # RL for Protein Sequence Design 
 
+We devolop a protein sequence algorithm using a light-weight proxy model for faster sampling using RL and MCMC.
 
 ## Environment setup
 
@@ -23,3 +24,17 @@ python run_mcmc.py
 python run_rl.py +experiment=dynappo program.sequence_length=30
 ```
 
+
+## Proxy Model based on ATLAS pTM
+
+### Validation MSE 
+
+![mse](results/ptm_mse.png)
+
+### Validation R2 
+
+![mse](results/ptm_r2.png)
+
+### Validation Correlation
+
+![mse](results/ptm_scorr.png)
