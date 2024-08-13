@@ -10,6 +10,19 @@ pip install -e dockq-proxy
 pip install -e esm/examples/protein-programming-language
 ```
 
+## Train the Proxy Protein Language Model
+
+```sh
+cd dockq-proxy
+# The ATLAS pTM based model
+python src/train.py trainer=gpu experiment=atlas_reg_llm_ptm
+
+# The ATLAS pLDDT based model
+python src/train.py trainer=gpu experiment=atlas_reg_llm_plddt
+
+# The ATLAS pTM based active learning model
+python src/train.py trainer=gpu experiment=atlas_reg_llm_ptm_acquisition
+```
 
 ## Run MCMC Baseline
 
