@@ -47,7 +47,7 @@ def read_fasta(fasta_path: str):
     fasta_dict = SeqIO.to_dict(fasta_sequences)
     return {k: str(v.seq) for k, v in fasta_dict.items()}
 
-@hydra.main(version_base=None, config_path=str(config_path), config_name="dqn_esm")
+@hydra.main(version_base=None, config_path=str(config_path), config_name="dynappo")
 def main(cfg: DictConfig) -> None:
 
     set_seeds(cfg.seed)

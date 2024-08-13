@@ -1,18 +1,18 @@
 #!/bin/bash 
 
 eval "$(micromamba shell hook --shell bash)"
-micromamba activate /home/ray/micromamba/envs/proxy
+micromamba activate proxy
 BASE_DIR=$(realpath ".")
 echo $BASE_DIR
 
 cd $BASE_DIR/dockq-proxy
-pip install -U -e .
+pip install -e .
 
 cd $BASE_DIR/esm/examples/protein-programming-language
-pip install -U -e .
+pip install -e .
 
 cd $BASE_DIR
-pip install -U -e .
+pip install -e .
 pip install -U deepspeed
 
 python -c 'import language, programs; print(language, programs)'
