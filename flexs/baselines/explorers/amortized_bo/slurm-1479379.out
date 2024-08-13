@@ -1,0 +1,119 @@
+
+======== GPU REPORT ========
+
+==============NVSMI LOG==============
+
+Timestamp                                 : Wed Jan 26 13:53:46 2022
+Driver Version                            : 460.106.00
+CUDA Version                              : 11.2
+
+Attached GPUs                             : 1
+GPU 00000000:A3:00.0
+    Accounting Mode                       : Enabled
+    Accounting Mode Buffer Size           : 4000
+    Accounted Processes
+        Process ID                        : 49209
+            GPU Utilization               : 3 %
+            Memory Utilization            : 0 %
+            Max memory usage              : 497 MiB
+            Time                          : 324358 ms
+            Is Running                    : 0
+        Process ID                        : 52702
+            GPU Utilization               : 13 %
+            Memory Utilization            : 0 %
+            Max memory usage              : 561 MiB
+            Time                          : 113962 ms
+            Is Running                    : 0
+        Process ID                        : 55182
+            GPU Utilization               : 4 %
+            Memory Utilization            : 0 %
+            Max memory usage              : 561 MiB
+            Time                          : 326001 ms
+            Is Running                    : 0
+        Process ID                        : 58776
+            GPU Utilization               : 12 %
+            Memory Utilization            : 0 %
+            Max memory usage              : 561 MiB
+            Time                          : 184199 ms
+            Is Running                    : 0
+        Process ID                        : 63090
+            GPU Utilization               : 0 %
+            Memory Utilization            : 0 %
+            Max memory usage              : 437 MiB
+            Time                          : 10117 ms
+            Is Running                    : 0
+        Process ID                        : 63401
+            GPU Utilization               : 0 %
+            Memory Utilization            : 0 %
+            Max memory usage              : 437 MiB
+            Time                          : 11016 ms
+            Is Running                    : 0
+        Process ID                        : 63900
+            GPU Utilization               : 0 %
+            Memory Utilization            : 0 %
+            Max memory usage              : 437 MiB
+            Time                          : 12646 ms
+            Is Running                    : 0
+        Process ID                        : 64616
+            GPU Utilization               : 10 %
+            Memory Utilization            : 2 %
+            Max memory usage              : 949 MiB
+            Time                          : 38111 ms
+            Is Running                    : 0
+        Process ID                        : 65368
+            GPU Utilization               : 10 %
+            Memory Utilization            : 2 %
+            Max memory usage              : 949 MiB
+            Time                          : 35196 ms
+            Is Running                    : 0
+        Process ID                        : 67070
+            GPU Utilization               : 9 %
+            Memory Utilization            : 2 %
+            Max memory usage              : 949 MiB
+            Time                          : 40918 ms
+            Is Running                    : 0
+        Process ID                        : 67908
+            GPU Utilization               : 1 %
+            Memory Utilization            : 0 %
+            Max memory usage              : 949 MiB
+            Time                          : 201352 ms
+            Is Running                    : 0
+        Process ID                        : 69139
+            GPU Utilization               : 4 %
+            Memory Utilization            : 0 %
+            Max memory usage              : 949 MiB
+            Time                          : 92215 ms
+            Is Running                    : 0
+        Process ID                        : 70105
+            GPU Utilization               : 3 %
+            Memory Utilization            : 0 %
+            Max memory usage              : 949 MiB
+            Time                          : 117905 ms
+            Is Running                    : 0
+        Process ID                        : 70798
+            GPU Utilization               : 7 %
+            Memory Utilization            : 1 %
+            Max memory usage              : 1461 MiB
+            Time                          : 158897 ms
+            Is Running                    : 0
+
+Wed Jan 26 13:53:47 2022       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.106.00   Driver Version: 460.106.00   CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Quadro RTX 8000     On   | 00000000:A3:00.0 Off |                  Off |
+| 34%   20C    P8    15W / 260W |      1MiB / 48601MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+

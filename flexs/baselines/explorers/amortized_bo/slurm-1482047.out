@@ -1,0 +1,65 @@
+
+======== GPU REPORT ========
+
+==============NVSMI LOG==============
+
+Timestamp                                 : Wed Jan 26 22:52:36 2022
+Driver Version                            : 460.106.00
+CUDA Version                              : 11.2
+
+Attached GPUs                             : 1
+GPU 00000000:28:00.0
+    Accounting Mode                       : Enabled
+    Accounting Mode Buffer Size           : 4000
+    Accounted Processes
+        Process ID                        : 43056
+            GPU Utilization               : 0 %
+            Memory Utilization            : 0 %
+            Max memory usage              : 44145 MiB
+            Time                          : 80079 ms
+            Is Running                    : 0
+        Process ID                        : 44159
+            GPU Utilization               : 0 %
+            Memory Utilization            : 0 %
+            Max memory usage              : 44659 MiB
+            Time                          : 165707 ms
+            Is Running                    : 0
+        Process ID                        : 48236
+            GPU Utilization               : 2 %
+            Memory Utilization            : 0 %
+            Max memory usage              : 44801 MiB
+            Time                          : 155985 ms
+            Is Running                    : 0
+        Process ID                        : 49672
+            GPU Utilization               : 5 %
+            Memory Utilization            : 1 %
+            Max memory usage              : 44801 MiB
+            Time                          : 59295 ms
+            Is Running                    : 0
+        Process ID                        : 50954
+            GPU Utilization               : 31 %
+            Memory Utilization            : 19 %
+            Max memory usage              : 45243 MiB
+            Time                          : 619313 ms
+            Is Running                    : 0
+
+Wed Jan 26 22:52:36 2022       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.106.00   Driver Version: 460.106.00   CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Quadro RTX 8000     On   | 00000000:28:00.0 Off |                  Off |
+| 34%   39C    P8    33W / 260W |      1MiB / 48601MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
