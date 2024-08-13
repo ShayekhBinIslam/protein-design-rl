@@ -1,0 +1,41 @@
+_target_: src.models.reg_llm_exploration.RegressionLLMExploration
+
+
+optimizer:
+  _target_: torch.optim.Adam
+  _partial_: true
+  lr: 0.001
+  weight_decay: 0.0
+
+scheduler:
+  _target_: torch.optim.lr_scheduler.ReduceLROnPlateau
+  _partial_: true
+  mode: min
+  factor: 0.1
+  patience: 10
+
+net:
+  _target_: src.models.components.simple_transformer_encoder.SimpleTransformerModel
+  ntoken: 23
+  d_model: 32 # embedding dimension
+  d_hid: 32 # dimension of the feedforward network model
+  nout: 32
+  vector_head: 2
+  scalar_head: false
+  nhead: 4
+  nlayers: 2
+  dropout: 0.1
+
+# compile model for faster training with pytorch 2.0
+compile: false
+
+exploration: masking
+# exploration: probabilistic_masking
+# exploration: bootstrap
+
+model_data_key_translate:
+  aatype: src
+  mask: src_key_padding_mask
+
+target: dockq
+

@@ -1,0 +1,10 @@
+name: eval_esms
+# compute_config: proxy_final_run_v2_a100_80gb_1gpu # You may specify `compute_config_id` or `cloud` instead
+compute_config: proxy_final_run_v2_v100_16gb_1gpu # You may specify `compute_config_id` or `cloud` instead
+cluster_env: proxy_final_run:6 # You may specify `build_id` instead
+runtime_env:
+  working_dir: "/home/ray/default/dockq-proxy/src/proxy_al"
+entrypoint: "/home/ray/micromamba/envs/proxy/bin/python eval_oracle.py"
+max_retries: 0
+
+# anyscale job submit /home/ray/default/dockq-proxy/scripts/proxy_al/eval_esmfold_scores.yml

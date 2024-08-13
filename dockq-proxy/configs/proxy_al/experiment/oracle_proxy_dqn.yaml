@@ -1,0 +1,14 @@
+# seed for random number generators in pytorch, numpy and python.random
+seed: 0
+proxy: 'Oracle'
+explorer: 'dqn'
+use_multi_gpu: True
+lr: 0.00025
+memory_size: 100000
+train_epochs: 20
+gamma: 0.9
+tau: 1.0
+epsilon_min: 0.05
+epsilon_max: 1.0
+exploration_fraction: 0.7
+allow_degen_actions: True

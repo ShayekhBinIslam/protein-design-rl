@@ -1,0 +1,14 @@
+_target_: src.data.dockqp_datamodule_v0.DockqPV0
+data_dir: ${paths.data_dir}
+batch_size: 4 # Needs to be divisible by the number of devices (e.g., if in a distributed setup)
+num_workers: 0
+pin_memory: False
+
+dataset_cfg:
+  #bucket_name: "casual-storage"
+  #file_path: "aalpha/proxy_dataset_v0_20231010.csv"
+  dataset_path: "s3://casual-storage/aalpha/proxy_dataset_v0_20231010.csv"
+
+transform: null # Per data point transformation -> If null loaded from model config
+
+collate_fn: null  # Per batch transformation -> If null loaded from model config

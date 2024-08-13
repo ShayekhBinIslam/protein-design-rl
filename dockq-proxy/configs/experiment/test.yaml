@@ -1,0 +1,46 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=example
+
+defaults:
+  - override /data: dockqp_esmf_afm_v0
+  - override /model: reg_llm_v0
+  - override /trainer: default
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+tags: ["base", "test"]
+
+seed: 12345
+
+trainer:
+  min_epochs: 300
+  max_epochs: 400
+  gradient_clip_val: 0.5
+
+model:
+  net:
+    _target_: src.models.components.simple_transformer_encoder.SimpleTransformerModel
+    ntoken: 28
+    d_model: 32 # embedding dimension
+    d_hid: 32 # dimension of the feedforward network model
+    nout: 32
+    nhead: 4
+    nlayers: 2
+    dropout: 0.1
+
+
+data:
+  batch_size: 4
+  num_workers: 0
+  dataset_cfg:
+    add_ending_token: False
+
+  collate_fn:
+    _target_: src.data.components.collate_functions.default_collate_fn
+
+logger:
+  wandb:
+    tags: ${tags}

@@ -1,0 +1,29 @@
+# seed for random number generators in pytorch, numpy and python.random
+seed: 0
+proxy: 'PTMProxy'
+explorer: 'rainbow'
+use_multi_gpu: False
+
+lr: 0.0000625
+memory_size: 1000000
+epsilon_max: 1.0
+epsilon_min: 0.02
+exploration_fraction: 0.5
+
+priority_exponent: 0.6
+priority_weight: 0.4
+reward_clip: 0.0
+learn_start_round: 5
+train_epochs: 20
+v_min: -10.0
+v_max: 10.0
+multi_step: 3
+gamma: 0.99
+atoms: 51
+norm_clip: 10.0
+adam_eps: 0.00015
+hidden_size: 128
+noisy_std: 0.1
+
+
+

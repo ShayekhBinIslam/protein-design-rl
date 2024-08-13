@@ -1,0 +1,13 @@
+# seed for random number generators in pytorch, numpy and python.random
+seed: 0
+proxy: 'PTMProxy'
+explorer: 'sac'
+use_multi_gpu: False
+memory_size: 100000
+train_epochs: 100
+gamma: 0.99
+tau: 0.005
+alpha: 1.0
+autotune: True
+train_batch_size: 256
+use_layer_norm: False

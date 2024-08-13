@@ -1,0 +1,12 @@
+_target_: src.data.atlas_datamodule_v0.AtlasV0
+data_dir: ${paths.data_dir}
+batch_size: 4 # Needs to be divisible by the number of devices (e.g., if in a distributed setup)
+num_workers: 0
+pin_memory: False
+
+dataset_cfg:
+  dataset_path: gs://casual-storage/aalpha/atlas_dataset_v1_2023111018H10S.csv
+
+transform: null # Per data point transformation -> If null loaded from model config
+
+collate_fn: null  # Per batch transformation -> If null loaded from model config

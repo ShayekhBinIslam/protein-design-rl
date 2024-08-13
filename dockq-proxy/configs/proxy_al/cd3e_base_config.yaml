@@ -1,0 +1,51 @@
+# @package _global_
+# specify here default training configuration
+defaults:
+  - _self_
+  - local: anyscale
+  - paths: default
+  - program: vhh_binder
+  - chain: default
+  - hydra: default
+
+  # experiment configs allow for version control of specific configurations
+  # e.g. best hyperparameters for each combination of model and datamodule
+  - debug: null
+
+
+# path to original working directory
+# hydra hijacks working directory by changing it to the new log directory
+# https://hydra.cc/docs/next/tutorials/basic/running_your_app/working_directory
+original_work_dir: ${hydra:runtime.cwd}
+
+# Output format version
+# Change in configuration does not bump format version
+version: "0.0.6"
+api_key_file: "/mnt/user_storage/.wandb_api_key"
+
+chain: 
+  num_live_points: 5
+
+wandb:
+  entity: "plemos"
+  project: "Dreamfold-Esm"
+  tags: []
+  group: "main"
+  mode: "online"
+
+esm_fold:
+  model_checkpoint: ${oc.env:ANYSCALE_ARTIFACT_STORAGE}/hub/checkpoints/esmfold_v1_full_model.pt
+
+env_batch_size: 16
+num_rounds: 20
+sequences_batch_size: 100
+model_queries_per_batch: 20
+esm_batch_size: 4
+checkpoint_dir: './configs/proxy_atlas/reg_llm_ptm/'
+
+# CD3e and AAS
+unconditional: False
+target_name: "CD3e"
+name: ${target_name}_vhh
+fasta_file: "/mnt/shared_storage/target_pdbs/AAlpha_targets/aalpha_targets_fasta"
+alphabet: 'AAS'

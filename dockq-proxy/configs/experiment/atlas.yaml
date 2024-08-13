@@ -1,0 +1,47 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=example
+
+defaults:
+  - override /data: atlas_v0
+  - override /model: reg_llm_v0
+  - override /trainer: default
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+tags: ["base", "simple_transformer"]
+
+seed: 12345
+
+trainer:
+  min_epochs: 10
+  max_epochs: 50
+  gradient_clip_val: 0.5
+
+model:
+  net:
+    _target_: src.models.components.simple_transformer_encoder.SimpleTransformerModel
+    ntoken: 28
+    d_model: 32 # embedding dimension
+    d_hid: 32 # dimension of the feedforward network model
+    nout: 32
+    nhead: 4
+    nlayers: 2
+    dropout: 0.1
+    scalar_linear_layers: 2
+
+  target: ptm
+
+data:
+  batch_size: 32
+  num_workers: 8
+
+logger:
+  wandb:
+    tags: ${tags}
+
+paths: 
+  output_dir: /efs/users/pablo_lemos_ce97f96/proxy_atlas
+save_config: True

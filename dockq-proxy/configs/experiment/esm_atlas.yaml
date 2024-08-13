@@ -1,0 +1,51 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=example
+
+defaults:
+  - override /data: atlas_v0
+  - override /model: reg_llm_esm_v0
+  - override /trainer: default
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+
+tags: ["base", "test"]
+
+seed: 12345
+
+trainer:
+  min_epochs: 1
+  max_epochs: 100
+  gradient_clip_val: 0.5
+
+model:
+  net:
+    _target_: src.models.components.simple_esm.SimpleESMV0
+    esm_type: esm2_8M_270K
+  optimizer:
+    _target_: torch.optim.AdamW
+    _partial_: true
+    lr: 0.000273
+    weight_decay: 0.01
+  target: ptm
+
+data:
+  batch_size: 16
+  num_workers: 8
+  dataset_cfg:
+    add_ending_token: False
+  # collate_fn:
+  #   _target_: src.data.components.collate_functions.atlas_collate_fn
+
+
+logger:
+  wandb:
+    tags: ${tags}
+
+paths: 
+  output_dir: /efs/users/pablo_lemos_ce97f96/proxy_atlas_esm
+save_config: True
+

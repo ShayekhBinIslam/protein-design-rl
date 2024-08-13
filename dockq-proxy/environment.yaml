@@ -1,0 +1,45 @@
+# Recommended: use micromamba for install!
+name: proxy
+
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  # pytorch=2.1 has problems with openfold :((
+  - pytorch=2.0
+  - pytorch-cuda=11.8
+  - numpy
+  - torchvision=0.*
+  - lightning=2.*
+  - torchmetrics=0.*
+  - hydra-core=1.*
+  - rich=13.*
+  - pre-commit=3.*
+  - pytest=7.*
+  # --------- loggers --------- #
+  - wandb
+  # --------- ------- --------- #
+  - pip>=23
+  - pip:
+      - hydra-optuna-sweeper
+      - hydra-colorlog
+      - rootutils
+      # --------- PROXY   --------- #
+      # TODO add at least major versions
+      - plotly
+      - scikit-learn
+      - pandas
+      - ray[tune]
+      - einops
+      - fair-esm[esmfold]
+      - git+https://github.com/NVIDIA/dllogger.git
+      - git+https://github.com/aqlaboratory/openfold.git
+      - modelcif
+      - google-cloud-storage
+      - gcsfs
+      - tensordict
+      - git+https://github.com/bryant1410/hydra@ray-2#subdirectory=plugins/hydra_ray_launcher

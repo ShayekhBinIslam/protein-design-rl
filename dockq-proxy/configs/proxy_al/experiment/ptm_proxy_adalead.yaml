@@ -1,0 +1,10 @@
+# seed for random number generators in pytorch, numpy and python.random
+seed: 0
+proxy: 'PTMProxy'
+explorer: 'adalead'
+use_multi_gpu: False
+recomb_rate: 0.0
+threshold: 0.05
+expected_mutations: 1.
+rho: 0
+eval_batch_size: 20

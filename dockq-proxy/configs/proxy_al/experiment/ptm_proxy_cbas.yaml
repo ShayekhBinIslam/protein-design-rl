@@ -1,0 +1,7 @@
+# seed for random number generators in pytorch, numpy and python.random
+seed: 0
+proxy: 'PTMProxy'
+explorer: 'cbas'
+use_multi_gpu: False
+vae_epochs: 10
+cycle_batch_size: 100

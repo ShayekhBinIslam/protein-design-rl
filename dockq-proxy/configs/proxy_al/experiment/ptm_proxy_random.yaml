@@ -1,0 +1,5 @@
+# seed for random number generators in pytorch, numpy and python.random
+seed: 0
+proxy: 'PTMProxy'
+explorer: 'random'
+use_multi_gpu: False

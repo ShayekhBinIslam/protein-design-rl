@@ -1,0 +1,8 @@
+# seed for random number generators in pytorch, numpy and python.random
+seed: 0
+proxy: 'PTMProxy'
+explorer: 'cmaes'
+use_multi_gpu: False
+population_size: 20
+max_iter: 10
+initial_variance: 0.2

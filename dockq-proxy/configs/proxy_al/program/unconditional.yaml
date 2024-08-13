@@ -1,0 +1,11 @@
+_target_: programs.unconditional.fixed_length_unconditional_program
+_partial_: False
+sequence_length: 80
+energy_function_terms:
+  - "MaximizePTM"
+  - "MaximizePLDDT"
+  - "MinimizeSurfaceHydrophobics"
+energy_function_weights:
+  - 1.0
+  - 1.0
+  - 1.0

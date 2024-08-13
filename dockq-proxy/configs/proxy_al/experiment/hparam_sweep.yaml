@@ -1,0 +1,6 @@
+# @package _global_
+#
+wandb:
+  tags:
+    - "hparam"
+  group: "hparam"

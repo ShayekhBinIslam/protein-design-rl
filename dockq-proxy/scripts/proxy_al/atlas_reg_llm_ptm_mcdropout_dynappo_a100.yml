@@ -1,0 +1,9 @@
+name: proxy_dynappo
+compute_config: proxy_final_run_v2_a100_80gb_1gpu # You may specify `compute_config_id` or `cloud` instead
+cluster_env: proxy_final_run:6 # You may specify `build_id` instead
+runtime_env:
+  working_dir: /home/ray/default/dockq-proxy/src/proxy_al
+entrypoint: "/home/ray/micromamba/envs/proxy/bin/python exp4_ptm_batch_traj_ppo.py"
+max_retries: 0
+
+# anyscale job submit /home/ray/default/dockq-proxy/scripts/proxy_al/atlas_reg_llm_ptm_mcdropout_dynappo_a100.yml

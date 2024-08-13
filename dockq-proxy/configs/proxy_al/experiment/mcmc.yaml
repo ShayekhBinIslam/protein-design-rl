@@ -1,0 +1,5 @@
+plot_file: mcmc_dev.png
+seed: null
+
+logdir: /mnt/shared_storage/proxy_output/
+save_filename: mcmc_dev.csv

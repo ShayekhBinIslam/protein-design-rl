@@ -1,0 +1,61 @@
+_target_: programs.vhh_binder.vhh_binder_program
+_partial_: true
+energy_function_terms:
+  - "MaximizePTM"
+  - "MaximizePLDDT"
+  - "MinimizeSurfaceHydrophobics"
+  - "MaximizeIPTM"
+  - "MinimizeInterfaceHotspotDistance"
+energy_function_weights:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 10.0
+  - 10.0
+
+var1_program:
+  _target_: language.program.ProgramNode
+  sequence_segment:
+    _target_: language.sequence.VariableLengthSequenceSegment
+    initial_sequence: 8 # Median
+    disallow_mutations_to_cysteine: True
+    mutation_operation_probabilities:
+      - 3.0 # Substitution
+      - 1.0 # Deletion
+      - 1.0 # Insertion
+    min_length: 5
+    max_length: 20
+    random_max_length: True
+
+var2_program:
+  _target_: language.program.ProgramNode
+  sequence_segment:
+    _target_: language.sequence.VariableLengthSequenceSegment
+    initial_sequence: 8 # Median
+    disallow_mutations_to_cysteine: True
+    mutation_operation_probabilities:
+      - 3.0 # Substitution
+      - 1.0 # Deletion
+      - 1.0 # Insertion
+    min_length: 5
+    max_length: 15
+    random_max_length: True
+
+var3_program:
+  _target_: language.program.ProgramNode
+  sequence_segment:
+    _target_: language.sequence.VariableLengthSequenceSegment
+    initial_sequence: 16 # Median
+    disallow_mutations_to_cysteine: True
+    mutation_operation_probabilities:
+      - 3.0 # Substitution
+      - 1.0 # Deletion
+      - 1.0 # Insertion
+    min_length: 10
+    max_length: 25
+    random_max_length: True
+
+# vhh_var_programs:
+# constrained length should be
+# min is 5, 5, 10
+# max is uniform 8-20, 8-15, 16-25

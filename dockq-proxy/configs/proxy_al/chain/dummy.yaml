@@ -1,0 +1,8 @@
+T_max: 1.0
+T_min: 0.0001
+total_num_steps: 10
+num_chains: 2
+display_progress: True
+progress_verbose_print: True
+folding_callback:
+  _target_: language.folding_callbacks.Dummy

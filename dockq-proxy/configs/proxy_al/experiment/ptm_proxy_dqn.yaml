@@ -1,0 +1,15 @@
+# seed for random number generators in pytorch, numpy and python.random
+seed: 0
+proxy: 'PTMProxy'
+explorer: 'dqn'
+use_multi_gpu: False
+
+lr: 0.00025
+memory_size: 100000
+epsilon_max: 1.0
+epsilon_min: 0.0
+exploration_fraction: 0.5
+train_epochs: 20
+gamma: 0.9
+allow_degen_actions: True
+tau: 1.0

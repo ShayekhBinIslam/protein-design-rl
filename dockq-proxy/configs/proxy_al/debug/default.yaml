@@ -1,0 +1,17 @@
+# @package _global_
+#
+defaults:
+  - override /chain: dummy
+  - override /program: vhh_binder
+
+hydra:
+  run:
+    dir: mcmc/debug/${version}/${name}/runs/${now:%Y-%m-%d}/${now:%H-%M-%S}/
+
+chain:
+  num_chains: 1
+
+wandb:
+  tags:
+    - "debug"
+  group: "debug"
