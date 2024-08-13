@@ -1,0 +1,12 @@
+name: "{{job_name}}"
+project_id: "prj_g2ssjhuchnaiw1gkihjjdheuqk"  # Id of project for esm
+compute_config: "alex-esm2_cluster_compute_734ad9e9-e42f-4efb-b00d-b0581aa70d63" # You may specify `compute_config_id` or `cloud` instead
+cluster_env: esmfold:29 # You may specify `build_id` instead
+runtime_env:
+  working_dir: "/home/ray/esm/esm/examples/protein-programming-language"
+entrypoint: "{{entrypoint}}"
+max_retries: 3
+
+
+
+

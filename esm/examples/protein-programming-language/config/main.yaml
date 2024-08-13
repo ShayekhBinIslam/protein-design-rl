@@ -1,0 +1,49 @@
+# @package _global_
+
+# specify here default training configuration
+defaults:
+  - _self_
+  - local: anyscale
+  - paths: default
+  - program: vhh_binder
+  - chain: default
+  - hydra: default
+
+  # experiment configs allow for version control of specific configurations
+  # e.g. best hyperparameters for each combination of model and datamodule
+  - experiment: null
+  - debug: null
+
+fasta_file: "/mnt/shared_storage/target_pdbs/AAlpha_targets/aalpha_targets_fasta"
+
+# target name must correspond to a sequence in the fasta file
+target_name: "CD3e"
+name: ${target_name}_vhh
+
+# path to original working directory
+# hydra hijacks working directory by changing it to the new log directory
+# https://hydra.cc/docs/next/tutorials/basic/running_your_app/working_directory
+original_work_dir: ${hydra:runtime.cwd}
+
+# seed for random number generators in pytorch, numpy and python.random
+seed: null
+
+# Output format version
+# Change in configuration does not bump format version
+version: "0.0.6"
+api_key_file: "/mnt/user_storage/.wandb_api_key"
+
+chain: 
+  num_live_points: 5
+
+wandb:
+  entity: "plemos"
+  project: "Dreamfold-Esm"
+  tags: []
+  group: "main"
+  mode: "online"
+
+esm_fold:
+  #model_checkpoint: /mnt/shared_storage/hub/checkpoints/esmfold_v1_full_model.pt
+  model_checkpoint: ${oc.env:ANYSCALE_ARTIFACT_STORAGE}/hub/checkpoints/esmfold_v1_full_model.pt
+  #model_checkpoint: ${download:${oc.env:ANYSCALE_ARTIFACT_STORAGE}/hub/checkpoints/esmfold_v1_full_model.pt}

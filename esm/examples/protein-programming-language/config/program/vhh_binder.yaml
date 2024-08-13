@@ -1,0 +1,54 @@
+# Updated based on second VHH paper
+# Updated based on hparams found during refolding
+_target_: programs.vhh_binder.vhh_binder_program
+_partial_: true
+energy_function_terms:
+  - "MaximizePTM"
+  - "MaximizePLDDT"
+  - "MinimizeSurfaceHydrophobics"
+  - "MaximizeIPTM"
+energy_function_weights:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 10.0
+
+var1_program:
+  _target_: language.program.ProgramNode
+  sequence_segment:
+    _target_: language.sequence.FixedLengthSequenceSegment
+    initial_sequence: 8 # Median
+    disallow_mutations_to_cysteine: True
+
+var2_program:
+  _target_: language.program.ProgramNode
+  sequence_segment:
+    _target_: language.sequence.VariableLengthSequenceSegment
+    initial_sequence: 8 # Median
+    disallow_mutations_to_cysteine: True
+    mutation_operation_probabilities:
+      - 3.0 # Substitution
+      - 1.0 # Deletion
+      - 1.0 # Insertion
+    min_length: 7
+    max_length: 9
+    random_max_length: False
+
+var3_program:
+  _target_: language.program.ProgramNode
+  sequence_segment:
+    _target_: language.sequence.VariableLengthSequenceSegment
+    initial_sequence: 16 # Median
+    disallow_mutations_to_cysteine: True
+    mutation_operation_probabilities:
+      - 3.0 # Substitution
+      - 1.0 # Deletion
+      - 1.0 # Insertion
+    min_length: 12
+    max_length: 19
+    random_max_length: True
+
+# vhh_var_programs:
+# constrained length should be
+# min is 5, 5, 10
+# max is uniform 8-20, 8-15, 16-25

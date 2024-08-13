@@ -1,0 +1,22 @@
+_target_: programs.mini_binder.mini_binder_program
+_partial_: true
+energy_function_terms:
+  - "MaximizePTM"
+  - "MaximizePLDDT"
+  - "MinimizeSurfaceHydrophobics"
+  - "MaximizeIPTM"
+energy_function_weights:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 10.0
+binder_sequence:
+  _target_: language.sequence.VariableLengthSequenceSegment
+  initial_sequence: 70
+  disallow_mutations_to_cysteine: True
+  mutation_operation_probabilities:
+    - 3.0 # Substitution
+    - 1.0 # Deletion
+    - 1.0 # Insertion
+  min_length: 60
+  max_length: 82
